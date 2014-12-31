@@ -1,0 +1,58 @@
+<%= render 'header' %>
+
+
+<body>
+<div class = "container">
+  <%= paginate @articles%>
+<%- model_class = Article -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h1>
+</div>
+<table class="table table-striped">
+  <div class = "container">
+    <div class = "row">
+      <thead>
+        <tr>
+          <th class ="span1">S.NO.</th>
+          <th class ="span3"><%= model_class.human_attribute_name(:title) %></th>
+          <th class ="span3"><%= model_class.human_attribute_name(:caption) %></th>
+          <th class ="span3"><%= model_class.human_attribute_name(:created_at) %></th>
+          <th class ="span2"><%=t '.actions', :default => t("helpers.actions") %></th>
+        </tr>
+      </thead>
+      </div>
+  </div>
+  <tbody>
+  <% i = 1
+     @curr_user = current_user.email
+  %>
+
+    <% @articles.each do |article|  %>
+      <tr>
+        <td class ="span1"><%= i %></td>
+        <td class ="span3"><%= link_to article.title, article_path(article)%></td>
+        <td class ="span3"><%= article.caption %></td>
+        <td class ="span3"><%=l article.created_at %></td>
+        <td>
+          <% i = i + 1%>
+
+          <%= link_to t('.edit', :default => t("helpers.links.edit")),
+                      edit_article_path(article), :class => 'btn btn-default btn-xs' %>
+          <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+                      article_path(article),
+                      :method => :delete,
+                      :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+                      :class => 'btn btn-xs btn-danger' %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to t('.new', :default => t("helpers.links.new")),
+            new_article_path,
+            :class => 'btn btn-default' %>
+<div>
+
+</body>
+

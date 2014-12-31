@@ -1,0 +1,18 @@
+<%= render 'header' %>
+
+<div class="container">
+    <p id="notice"><%= notice %></p>
+    <strong><h2 class="form-signin-heading"><%= @article.title %></h2></strong>
+
+    <p"><%= @article.caption %></p>
+
+    <%= image_tag @article.photo.url %></br></br>
+
+    <p  style="margin-right: 300px; line-height: 200%"><%= @article.matter %>
+    </p>
+
+  <div class="container" style = "margin-bottom: 50px">
+    <%= link_to 'Edit', edit_article_path(@article), class: 'btn btn-default' %>
+    <%= link_to 'Back', articles_path, class: 'btn btn-default' %>
+    </div>
+</div>

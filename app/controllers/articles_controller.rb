@@ -25,8 +25,8 @@ class ArticlesController < ApplicationController
         @query = Article.search do
           fulltext params[:search]
           # facet(:email)
-          with :email, @curr_user
-          # paginate :per_page => 2
+          with(:email, @curr_user)
+          # paginate  :page => 2 , :per_page => 1
         end
         @articles  = @query.results
 
@@ -34,7 +34,7 @@ class ArticlesController < ApplicationController
       else
         @article = Article.new
         @articles_var = Article.where(:email => @curr_user)
-        @articles = @articles_var.page(params[:page])
+        @articles = @articles_var.page(params[:page]).per(2)
       end
 
     else

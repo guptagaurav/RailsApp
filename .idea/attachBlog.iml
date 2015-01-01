@@ -52,11 +52,13 @@
     <orderEntry type="library" scope="PROVIDED" name="activemodel (v4.1.8, RVM: ruby-1.9.3-p551) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="activerecord (v4.1.8, RVM: ruby-1.9.3-p551) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="activesupport (v4.1.8, RVM: ruby-1.9.3-p551) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="addressable (v2.3.6, RVM: ruby-1.9.3-p551) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="arel (v5.0.1.20140414130214, RVM: ruby-1.9.3-p551) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="bcrypt (v3.1.9, RVM: ruby-1.9.3-p551) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="bcrypt-ruby (v3.1.5, RVM: ruby-1.9.3-p551) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="bootstrap-sass (v3.2.0.0, RVM: ruby-1.9.3-p551) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="builder (v3.2.2, RVM: ruby-1.9.3-p551) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="cancancan (v1.9.2, RVM: ruby-1.9.3-p551) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="climate_control (v0.0.3, RVM: ruby-1.9.3-p551) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="cocaine (v0.5.5, RVM: ruby-1.9.3-p551) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="coffee-rails (v4.0.1, RVM: ruby-1.9.3-p551) [gem]" level="application" />
@@ -66,6 +68,7 @@
     <orderEntry type="library" scope="PROVIDED" name="erubis (v2.7.0, RVM: ruby-1.9.3-p551) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="excon (v0.42.1, RVM: ruby-1.9.3-p551) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="execjs (v2.2.2, RVM: ruby-1.9.3-p551) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="heroku (v3.21.3, RVM: ruby-1.9.3-p551) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="heroku-api (v0.3.22, RVM: ruby-1.9.3-p551) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="hike (v1.2.3, RVM: ruby-1.9.3-p551) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="i18n (v0.7.0, RVM: ruby-1.9.3-p551) [gem]" level="application" />
@@ -73,12 +76,17 @@
     <orderEntry type="library" scope="PROVIDED" name="jquery-rails (v3.1.2, RVM: ruby-1.9.3-p551) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="json (v1.8.1, RVM: ruby-1.9.3-p551) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="kaminari (v0.16.1, RVM: ruby-1.9.3-p551) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="launchy (v2.4.3, RVM: ruby-1.9.3-p551) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="mail (v2.6.3, RVM: ruby-1.9.3-p551) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="mime-types (v2.4.3, RVM: ruby-1.9.3-p551) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="mini_portile (v0.6.1, RVM: ruby-1.9.3-p551) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="minitest (v5.5.0, RVM: ruby-1.9.3-p551) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="multi_json (v1.10.1, RVM: ruby-1.9.3-p551) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="netrc (v0.10.2, RVM: ruby-1.9.3-p551) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="nokogiri (v1.6.5, RVM: ruby-1.9.3-p551) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="orm_adapter (v0.5.0, RVM: ruby-1.9.3-p551) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="paperclip (v4.2.1@0e39d7, RVM: ruby-1.9.3-p551) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="pr_geohash (v1.0.0, RVM: ruby-1.9.3-p551) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="rack (v1.5.2, RVM: ruby-1.9.3-p551) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="rack-test (v0.6.2, RVM: ruby-1.9.3-p551) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="rails (v4.1.8, RVM: ruby-1.9.3-p551) [gem]" level="application" />
@@ -86,7 +94,9 @@
     <orderEntry type="library" scope="PROVIDED" name="rake (v10.4.2, RVM: ruby-1.9.3-p551) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="rdoc (v4.2.0, RVM: ruby-1.9.3-p551) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="responders (v1.1.2, RVM: ruby-1.9.3-p551) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="rest-client (v1.6.7, RVM: ruby-1.9.3-p551) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="rsolr (v1.0.10, RVM: ruby-1.9.3-p551) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="rubyzip (v0.9.9, RVM: ruby-1.9.3-p551) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="sass (v3.2.19, RVM: ruby-1.9.3-p551) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="sass-rails (v4.0.5, RVM: ruby-1.9.3-p551) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="sdoc (v0.4.1, RVM: ruby-1.9.3-p551) [gem]" level="application" />
@@ -95,10 +105,13 @@
     <orderEntry type="library" scope="PROVIDED" name="sprockets-rails (v2.2.2, RVM: ruby-1.9.3-p551) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="sqlite3 (v1.3.10, RVM: ruby-1.9.3-p551) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="sunspot (v2.1.1, RVM: ruby-1.9.3-p551) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="sunspot_rails (v2.1.1, RVM: ruby-1.9.3-p551) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="sunspot_solr (v2.1.1, RVM: ruby-1.9.3-p551) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="thor (v0.19.1, RVM: ruby-1.9.3-p551) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="thread_safe (v0.3.4, RVM: ruby-1.9.3-p551) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="tilt (v1.4.1, RVM: ruby-1.9.3-p551) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="turbolinks (v2.5.3, RVM: ruby-1.9.3-p551) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="twitter-bootstrap-rails (v3.2.0, RVM: ruby-1.9.3-p551) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="tzinfo (v1.2.2, RVM: ruby-1.9.3-p551) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="uglifier (v2.6.0, RVM: ruby-1.9.3-p551) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="warden (v1.2.3, RVM: ruby-1.9.3-p551) [gem]" level="application" />

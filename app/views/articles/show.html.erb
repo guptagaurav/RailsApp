@@ -15,4 +15,38 @@
     <%= link_to 'Edit', edit_article_path(@article), class: 'btn btn-default' %>
     <%= link_to 'Back', articles_path, class: 'btn btn-default' %>
     </div>
+
+  <h2>Comments</h2>
+  <table class="table table-striped">
+    <div class = "container">
+    <tbody>
+      <% @article.comments.each do |comment| %>
+              <tr>
+                <td class ="span2"><strong><%= comment.commenter %> :</strong></td>
+                <td class ="span2"><%= comment.body %></td>
+                <td class="span2"><%= link_to 'Delete', [comment.article, comment], method: :delete , data: { confirm: 'Are you sure?' }%></td></br></br>
+              </tr>
+      <% end %>
+    </tbody>
+    <div class = "container">
+    </table>
+
+
+  <h3>Add a comment:</h3>
+  <div style="width: 50%">
+  <%= form_for([@article, @article.comments.build]) do |f| %>
+      <p>
+        <%= f.label :commenter %><br>
+        <%= f.text_field :commenter,:class => "form-control" %>
+      </p>
+      <p>
+        <%= f.label :body %><br>
+        <%= f.text_area :body, :class => "form-control" %>
+      </p>
+      <p>
+        <%= f.submit "Comment", :class => "btn btn-default" %>
+      </p>
+     </div>
+  <% end %>
+
 </div>

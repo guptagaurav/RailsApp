@@ -3,14 +3,14 @@ class ArticlesController < ApplicationController
 
   before_action :set_article, only: [:show, :edit, :update, :destroy]
 
-  before_filter :set_current_account
+  # before_filter :set_current_account
 
 
-  def set_current_account
-    #  set @current_account from session data here
-    @curr_user = current_user.email
-    Article.current = @curr_user
-  end
+  # def set_current_account
+  #   #  set @current_account from session data here
+  #   @curr_user = current_user.email
+  #   Article.current = @curr_user
+  # end
 
   # GET /articles
   # GET /articles.json
@@ -38,7 +38,7 @@ class ArticlesController < ApplicationController
       end
 
     else
-      redirect_to new_user_session_path
+      @articles = Article.all.page(params[:page]).per(2)
     end
     # puts @articles
   end

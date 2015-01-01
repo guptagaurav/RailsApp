@@ -15,8 +15,8 @@ gem 'cancancan', '~> 1.9'
 
 gem 'kaminari'
 
-gem "meta_where"
-gem "meta_search"
+# gem "meta_where"
+# gem "meta_search"
 
 
 gem 'paperclip', github: 'thoughtbot/paperclip'

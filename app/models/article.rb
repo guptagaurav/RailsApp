@@ -1,8 +1,9 @@
 class Article < ActiveRecord::Base
 
-  attr_accessor :search
+  has_many :comments
 
-  cattr_accessor :current
+  attr_accessor :search
+  # cattr_accessor :current
 
 
   searchable do

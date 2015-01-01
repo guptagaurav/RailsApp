@@ -1,11 +1,15 @@
 Rails.application.routes.draw do
 
+  resources :comments
+
   # get 'articles/new?' , to: redirect('articles')
 
   devise_for :users
-  resources :articles
+  resources :articles do
+    resources :comments
+  end
 
-  root 'redirect#index'
+  root 'articles#index'
 
   resources :search
 

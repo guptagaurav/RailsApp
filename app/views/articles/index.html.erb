@@ -24,7 +24,7 @@
   </div>
   <tbody>
   <% i = 1
-     @curr_user = current_user.email
+     # @curr_user = current_user.email
   %>
 
     <% @articles.each do |article|  %>
@@ -48,11 +48,11 @@
     <% end %>
   </tbody>
 </table>
-
+<% if user_signed_in? %>
 <%= link_to t('.new', :default => t("helpers.links.new")),
             new_article_path,
             :class => 'btn btn-default' %>
+      <% end %>
 <div>
 
 </body>
-

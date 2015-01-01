@@ -6,13 +6,19 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="\">Hi <%= current_user.email %></a>
+      <% if user_signed_in? %>
+        <a class="navbar-brand" href="\">Hi <%= current_user.email %></a>
+      <% else %>
+        <%= link_to 'Login', new_user_session_path, :class => "navbar-brand" %>
+      <% end %>
     </div>
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <% if user_signed_in? %>
       <ul class="nav navbar-nav">
         <li><%= link_to 'Sign Out', destroy_user_session_path, :method => 'delete' %></br></li>
         <li><%= link_to 'New Article', new_article_path %></br></li>
       </ul>
+      <% end %>
 
       <div class="col-sm-3 col-md-3 pull-right">
         <form class="navbar-form" role="search">

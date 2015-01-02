@@ -1,5 +1,7 @@
+<%= render 'articles/header' %>
+<div class="container">
 <h1>Editing comment</h1>
 
 <%= render 'form' %>
-<%= link_to 'Show', @comment %> |
-<%= link_to 'Back', comments_path %>
+<%= link_to 'Back', article_url(@comment.article_id) %>
+</div>

@@ -67,6 +67,8 @@ GEM
     erubis (2.7.0)
     excon (0.42.1)
     execjs (2.2.2)
+    friendly_id (5.0.4)
+      activerecord (>= 4.0.0)
     heroku (3.21.3)
       heroku-api (~> 0.3.19)
       launchy (>= 0.3.2)
@@ -185,6 +187,7 @@ DEPENDENCIES
   cancancan (~> 1.9)
   coffee-rails (~> 4.0.0)
   devise
+  friendly_id (~> 5.0.1)
   heroku
   jbuilder (~> 2.0)
   jquery-rails

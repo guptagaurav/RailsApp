@@ -4,6 +4,19 @@ class Article < ActiveRecord::Base
 
   attr_accessor :search
   # cattr_accessor :current
+  # def to_param
+  #   "#{id} #{title}".parameterize
+  # end
+
+  extend FriendlyId
+  friendly_id :title, use: [:slugged, :finders, :history]
+
+  def slug_candidates
+    [
+        :title,
+        [:title, :id]
+    ]
+  end
 
 
   searchable do

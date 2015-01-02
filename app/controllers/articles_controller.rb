@@ -45,6 +45,10 @@ class ArticlesController < ApplicationController
   # GET /articles/1
   # GET /articles/1.json
   def show
+    @article = Article.find(params[:id])
+    if request.path != article_path(@article)
+      redirect_to @article, status: :moved_permanently
+    end
   end
 
   # GET /articles/new

@@ -29,8 +29,11 @@ class CommentsController < ApplicationController
   end
 
   def update
+    # @article = Article.find(params[:article_id])
     @comment.update(comment_params)
-    respond_with(@comment)
+    redirect_to article_url(@comment.article_id)
+
+
   end
 
   def destroy

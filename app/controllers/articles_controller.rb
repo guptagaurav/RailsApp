@@ -1,5 +1,5 @@
 class ArticlesController < ApplicationController
-  # load_and_authorize_resource
+  load_and_authorize_resource
 
   before_action :set_article, only: [:show, :edit, :update, :destroy]
 
@@ -18,27 +18,26 @@ class ArticlesController < ApplicationController
 
 
     # @articles = Article.all
-    if user_signed_in?
-      @curr_user = current_user.email
-      puts "-----------------#{@curr_user}"
+    #   @curr_user = current_user.email
+    #   puts "-----------------#{@curr_user}"
       if params[:search]
         @query = Article.search do
           fulltext params[:search]
           # facet(:email)
-          with(:email, @curr_user)
+          # with(:email, @curr_user)
           # paginate  :page => 2 , :per_page => 1
         end
         @articles  = @query.results
 
         # puts "--------------------------#{@articles[0].email}"
-      else
+      if user_signed_in?
         @article = Article.new
         @articles_var = Article.where(:email => @curr_user)
         @articles = @articles_var.page(params[:page]).per(2)
       end
 
     else
-      @articles = Article.all.page(params[:page]).per(2)
+      @articles = Article.all.page(params[:page]).per(3)
     end
     # puts @articles
   end
@@ -46,10 +45,6 @@ class ArticlesController < ApplicationController
   # GET /articles/1
   # GET /articles/1.json
   def show
-    if user_signed_in?
-    else
-      redirect_to new_user_session_path
-    end
   end
 
   # GET /articles/new

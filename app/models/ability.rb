@@ -1,7 +1,7 @@
 class Ability
   include CanCan::Ability
 
-  def initialize(user)
+  def initialize(current_user)
     # Define abilities for the passed in user here. For example:
     #
     #   user ||= User.new # guest user (not logged in)
@@ -10,6 +10,36 @@ class Ability
     #   else
     #     can :read, :all
     #   end
+
+    current_user ||= User.new
+
+    if current_user.email == "gaurav.00g7@gmail.com"
+      can :manage, :all
+    else
+      can :read, :all
+      can :create, Comment
+      can :create, Article do |article|
+        article.email == current_user.email
+      end
+      can :update, Article do |article|
+        article.email == current_user.email
+      end
+      can :destroy, Article do |article|
+        article.email == current_user.email
+      end
+
+      can :update, Comment do |comment|
+        comment.article.email == current_user.email
+      end
+
+      can :destroy, Comment do |comment|
+        comment.article.email == current_user.email
+      end
+
+    end
+
+
+
     #
     # The first argument to `can` is the action you are giving the user
     # permission to do.

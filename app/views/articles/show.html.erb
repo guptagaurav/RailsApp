@@ -12,7 +12,9 @@
     </p>
 
   <div class="container" style = "margin-bottom: 50px">
-    <%= link_to 'Edit', edit_article_path(@article), class: 'btn btn-default' %>
+    <% if can? :update, @article %>
+         <%= link_to 'Edit', edit_article_path(@article), class: 'btn btn-default' %>
+    <% end %>
     <%= link_to 'Back', articles_path, class: 'btn btn-default' %>
     </div>
 
@@ -24,7 +26,12 @@
               <tr>
                 <td class ="span2"><strong><%= comment.commenter %> :</strong></td>
                 <td class ="span2"><%= comment.body %></td>
-                <td class="span2"><%= link_to 'Delete', [comment.article, comment], method: :delete , data: { confirm: 'Are you sure?' }%></td></br></br>
+                <% if can? :update, comment %>
+                <td class="span2"><%= link_to 'Edit', edit_article_comment_path(comment.article, comment), method: :get %></td></br></br>
+                  <% end %>
+                <% if can? :destroy, comment %>
+                    <td class="span2"><%= link_to 'Delete', [comment.article, comment], method: :delete , data: { confirm: 'Are you sure?' }%></td></br></br>
+                <% end %>
               </tr>
       <% end %>
     </tbody>

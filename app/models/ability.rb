@@ -18,8 +18,8 @@ class Ability
     else
       can :read, :all
       can :create, Comment
-      can :create, Article do |article|
-        article.email == current_user.email
+      unless current_user.nil?
+        can :create, Article
       end
       can :update, Article do |article|
         article.email == current_user.email

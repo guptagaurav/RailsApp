@@ -18,6 +18,10 @@
         <li><%= link_to 'Sign Out', destroy_user_session_path, :method => 'delete' %></br></li>
         <li><%= link_to 'New Article', new_article_path %></br></li>
       </ul>
+      <% else %>
+          <ul class="nav navbar-nav">
+            <li><%= link_to 'Home', articles_path , :class => "navbar-brand"%></br></li>
+          </ul>
       <% end %>
 
       <div class="col-sm-3 col-md-3 pull-right">

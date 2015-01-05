@@ -29,11 +29,11 @@ class Ability
       end
 
       can :update, Comment do |comment|
-        comment.article.email == current_user.email
+        comment.try(:user_email) == current_user.email
       end
 
       can :destroy, Comment do |comment|
-        comment.article.email == current_user.email
+        comment.try(:user_email) == current_user.email
       end
 
     end

@@ -30,9 +30,10 @@ class CommentsController < ApplicationController
 
   def create
     @search = Article.search(params[:q])
-
     @article = Article.find(params[:article_id])
+    # @comment = @article.comments.update_attributes(:user_email => current_user.email)
     @comment = @article.comments.create(comment_params)
+    @comment.update_attributes(:user_email => current_user.email)
     redirect_to article_path(@article)
     # @comment.save
     # respond_with(@comment)
@@ -63,6 +64,7 @@ class CommentsController < ApplicationController
     end
 
     def comment_params
+      # @email = current_user.email
       params.require(:comment).permit(:commenter, :body)
     end
 end

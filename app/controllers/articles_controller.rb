@@ -26,7 +26,8 @@ class ArticlesController < ApplicationController
           else
             @articles = Article.all.page(params[:page]).per(3)
           end
-        @articles  = @search.result
+
+        @articles  = @search.result.page(params[:page]).per(3)
   end
     # puts @articles
   # GET /articles/1

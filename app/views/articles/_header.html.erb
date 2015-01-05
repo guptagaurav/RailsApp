@@ -25,18 +25,19 @@
       <% end %>
 
       <div class="col-sm-3 col-md-3 pull-right">
-        <form class="navbar-form" role="search">
-          <div class="input-group">
-            <!--<input type="text" class="form-control" placeholder="Search" name="q">-->
-            <%= form_tag articles_path, :method => :get do |f| %>
-                <%= text_field_tag :search, params[:search], :class => "form-control" , :placeholder => "Search" %>
-                <div class="input-group-btn">
-                <%= submit_tag "Search", :class=> "btn btn-default"%>
-                </div>
-            <% end %>
+
+      <form class = "navbar-form navbar-right" role = "search">
+        <div class="input-group">
+        <%= search_form_for @search do |f| %>
+            <div class="field">
+              <%= f.text_field :matter_or_caption_or_title_cont,:class => "form-control", :placeholder => "Search"  %>
             </div>
-          </div>
-        </form>
+            <div class="input-group-btn">
+              <%= f.submit "Search", :class=> "btn btn-default" %>
+            </div>
+        <% end %>
+        </div>
+      </form>
       </div>
     </div>
   </nav>

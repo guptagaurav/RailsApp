@@ -5,7 +5,6 @@ class ArticlesController < ApplicationController
 
   # before_filter :set_current_account
 
-
   # def set_current_account
   #   #  set @current_account from session data here
   #   @curr_user = current_user.email
@@ -16,43 +15,33 @@ class ArticlesController < ApplicationController
   # GET /articles.json
   def index
 
+      @search = Article.search(params[:q])
 
     # @articles = Article.all
     #   @curr_user = current_user.email
     #   puts "-----------------#{@curr_user}"
-      if params[:search]
-        @query = Article.search do
-          fulltext params[:search]
-          # facet(:email)
-          # with(:email, @curr_user)
-          # paginate  :page => 2 , :per_page => 1
-        end
-        @articles  = @query.results
-
-        # puts "--------------------------#{@articles[0].email}"
-      if user_signed_in?
-        @article = Article.new
-        @articles_var = Article.where(:email => @curr_user)
-        @articles = @articles_var.page(params[:page]).per(2)
-      end
-
-    else
-      @articles = Article.all.page(params[:page]).per(3)
-    end
-    # puts @articles
+          if user_signed_in?
+            @article = Article.new
+            @articles = Article.all.page(params[:page]).per(2)
+          else
+            @articles = Article.all.page(params[:page]).per(3)
+          end
+        @articles  = @search.result
   end
-
+    # puts @articles
   # GET /articles/1
   # GET /articles/1.json
   def show
+    @search = Article.search(params[:q])
     @article = Article.find(params[:id])
     if request.path != article_path(@article)
       redirect_to @article, status: :moved_permanently
     end
   end
-
   # GET /articles/new
   def new
+    @search = Article.search(params[:q])
+
     if user_signed_in?
       @article = Article.new
     else
@@ -62,6 +51,9 @@ class ArticlesController < ApplicationController
 
   # GET /articles/1/edit
   def edit
+
+    @search = Article.search(params[:q])
+
     if user_signed_in?
     else
       redirect_to new_user_session_path
@@ -71,6 +63,7 @@ class ArticlesController < ApplicationController
   # POST /articles
   # POST /articles.json
   def create
+    @search = Article.search(params[:q])
     @article = Article.new(article_params)
     respond_to do |format|
       if @article.save && @article.update_attributes(:email => current_user.email )
@@ -86,6 +79,8 @@ class ArticlesController < ApplicationController
   # PATCH/PUT /articles/1
   # PATCH/PUT /articles/1.json
   def update
+    @search = Article.search(params[:q])
+
     if user_signed_in?
       respond_to do |format|
         if @article.update(article_params)
@@ -104,6 +99,8 @@ class ArticlesController < ApplicationController
   # DELETE /articles/1
   # DELETE /articles/1.json
   def destroy
+    @search = Article.search(params[:q])
+
     if user_signed_in?
       @article.destroy
       respond_to do |format|

@@ -1,10 +1,10 @@
 source 'https://rubygems.org'
 
-gem 'sunspot_rails'
-
-group :development do
-  gem 'sunspot_solr'
-end
+# gem 'sunspot_rails'
+#
+# group :development do
+#   gem 'sunspot_solr'
+# end
 
 gem "heroku"
 
@@ -18,7 +18,7 @@ gem 'kaminari'
 # gem "meta_where"
 # gem "meta_search"
 
-
+gem 'ransack'
 gem 'paperclip', github: 'thoughtbot/paperclip'
 
 gem 'bootstrap-sass',       '3.2.0.0'
@@ -28,6 +28,14 @@ gem 'bcrypt-ruby', :require => 'bcrypt'
 gem "friendly_id", "~> 5.0.1"
 
 gem 'devise'
+
+group :test, :development do
+    gem "rspec-rails", "~> 2.0"
+    gem "factory_girl_rails", "~> 4.0"
+    gem "capybara"
+    gem "database_cleaner"
+    gem "selenium-webdriver"
+ end
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.8'

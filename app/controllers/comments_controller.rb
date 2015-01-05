@@ -4,23 +4,33 @@ class CommentsController < ApplicationController
   respond_to :html
 
   def index
+    @search = Article.search(params[:q])
+
     @comments = Comment.all
     respond_with(@comments)
   end
 
   def show
+    @search = Article.search(params[:q])
+
     respond_with(@comment)
   end
 
   def new
+    @search = Article.search(params[:q])
+
     @comment = Comment.new
     respond_with(@comment)
   end
 
   def edit
+    @search = Article.search(params[:q])
+
   end
 
   def create
+    @search = Article.search(params[:q])
+
     @article = Article.find(params[:article_id])
     @comment = @article.comments.create(comment_params)
     redirect_to article_path(@article)
@@ -29,6 +39,8 @@ class CommentsController < ApplicationController
   end
 
   def update
+    @search = Article.search(params[:q])
+
     # @article = Article.find(params[:article_id])
     @comment.update(comment_params)
     redirect_to article_url(@comment.article_id)
@@ -37,6 +49,8 @@ class CommentsController < ApplicationController
   end
 
   def destroy
+    @search = Article.search(params[:q])
+
     @article = Article.find(params[:article_id])
     @comment = @article.comments.find(params[:id])
     @comment.destroy

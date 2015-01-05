@@ -19,11 +19,6 @@ class Article < ActiveRecord::Base
   end
 
 
-  searchable do
-    string :title,:caption
-    text :matter
-    string :email
-  end
 
   has_attached_file :photo
 

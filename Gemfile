@@ -8,6 +8,11 @@ source 'https://rubygems.org'
 
 gem "heroku"
 
+
+gem 'prawn'
+
+gem 'prawnto', '~> 0.1.1'
+
 gem 'twitter-bootstrap-rails'
 
 

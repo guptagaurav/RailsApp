@@ -33,7 +33,9 @@ class CommentsController < ApplicationController
     @article = Article.find(params[:article_id])
     # @comment = @article.comments.update_attributes(:user_email => current_user.email)
     @comment = @article.comments.create(comment_params)
-    @comment.update_attributes(:user_email => current_user.email)
+    if user_signed_in?
+      @comment.update_attributes(:user_email => current_user.email)
+    end
     redirect_to article_path(@article)
     # @comment.save
     # respond_with(@comment)

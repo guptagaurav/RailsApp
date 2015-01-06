@@ -28,6 +28,7 @@ class ArticlesController < ApplicationController
           end
 
         @articles  = @search.result.page(params[:page]).per(3)
+
   end
     # puts @articles
   # GET /articles/1
@@ -35,9 +36,15 @@ class ArticlesController < ApplicationController
   def show
     @search = Article.search(params[:q])
     @article = Article.find(params[:id])
-    if request.path != article_path(@article)
-      redirect_to @article, status: :moved_permanently
+
+    respond_to do |format|
+      format.html
+      format.pdf do
+        pdf = ShowPdf.new(@article)
+        send_data pdf.render, type: "application/pdf"
+      end
     end
+
   end
   # GET /articles/new
   def new

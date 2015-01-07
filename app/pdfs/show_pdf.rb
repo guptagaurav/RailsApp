@@ -20,7 +20,7 @@ class ShowPdf < Prawn::Document
   def show_photo
     move_down 20
     id_sample = @article.photo.path
-    image id_sample, height: 300, width: 300
+    image id_sample, height: 200, width: 300
   end
 
   def show_matter

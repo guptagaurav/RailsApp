@@ -4,7 +4,9 @@ Rails.application.routes.draw do
 
   # get 'articles/new?' , to: redirect('articles')
 
-  devise_for :users
+  devise_for :users, :controllers => { omniauth_callbacks: 'omniauth_callbacks' }
+
+
   resources :articles do
     resources :comments
   end

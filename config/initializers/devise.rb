@@ -6,6 +6,7 @@ Devise.setup do |config|
   # confirmation, reset password and unlock tokens in the database.
   # config.secret_key = '69fc3ac83f77ac9d4334549470ca5bfdc191445fd5879cbe3c30a0ddf767ab08d1fee9be57b22946bf80d7617869f55b9a97dc8ed00cd74c5cde48bcf61cdb76'
 
+
   # ==> Mailer Configuration
   # Configure the e-mail address which will be shown in Devise::Mailer,
   # note that it will be overwritten if you use your own mailer class
@@ -20,6 +21,17 @@ Devise.setup do |config|
   # :mongoid (bson_ext recommended) by default. Other ORMs may be
   # available as additional gems.
   require 'devise/orm/active_record'
+
+
+  # config.oauth :facebook, 'APP_ID', 'APP_SECRET',
+  #              :site => 'https://graph.facebook.com/',
+  #              :authorize_path => '/oauth/authorize',
+  #              :access_token_path => '/oauth/access_token',
+  #              :scope => %w(email)
+
+  config.omniauth :facebook, 'APP_ID', 'APP_SECRET'
+  config.omniauth :twitter, "YKRsiung74vWNRbDOCJj5uXS0", "24OR2TlYdWKvDi8OhzD3OajUEvwAq8JgVsKZlRgphHtPUCFLB6"
+  config.omniauth :linked_in, "KEY", "SECRET"
 
   # ==> Configuration for any authentication mechanism
   # Configure which keys are used when authenticating a user. The default is

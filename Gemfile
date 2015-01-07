@@ -19,6 +19,14 @@ gem 'twitter-bootstrap-rails'
 gem 'cancancan', '~> 1.9'
 
 gem 'kaminari'
+gem 'omniauth'
+gem 'omniauth-twitter'
+gem 'omniauth-facebook'
+gem 'omniauth-linkedin'
+
+gem 'oauth2'
+gem 'nifty-generators' #Just to create a basic layout
+
 
 # gem "meta_where"
 # gem "meta_search"
